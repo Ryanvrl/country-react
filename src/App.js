@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from "react-router-dom";
+import { Header } from "./styled/header";
+import { AppRoutes } from "./pages/routes";
+import { createGlobalStyle } from "styled-components";
+import { ThemeContext, ThemeProvider } from "./components/contexts/theme-context";
+import { useContext } from "react";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { theme } = useContext(ThemeContext)
+
+    return (
+        <>
+            <GlobalStyle />
+            <ThemeProvider>
+                <BrowserRouter>
+                    <Header />
+                    <AppRoutes />
+                </BrowserRouter>
+            </ThemeProvider>
+        </>
+    )
 }
+
+const GlobalStyle = createGlobalStyle`
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+      }
+
+      #root {
+        min-height: 100vh;
+      }
+`
 
 export default App;
