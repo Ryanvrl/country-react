@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../contexts/theme-context";
 import { Loading } from "../loading/loading";
 import { ErrorGet } from "../errorGet/errorGet";
+import axios from "axios";
 
 
 const CountryInfo = () => {
@@ -29,11 +30,8 @@ const CountryInfo = () => {
     }, [])
 
     const getCountry = async () => {
-        const response = await fetch(`https://restcountries.com/v3.1/name/${countryData.country}`).then(res => {
-            if (!res.ok) {
-                throw Error('Sorry, could not fetch the data')
-            }
-            return res.json()
+        const response = await axios.get(`https://restcountries.com/v3.1/name/${countryData.country}`).then(res => {
+            return res.data
         })
             .then(data => {
                 setCountry(data[0]);
@@ -49,11 +47,7 @@ const CountryInfo = () => {
                 setIsPending(false)
                 setError(e.message)
             })
-
-
         return response
-
-
     }
 
     const getForInFunction = (response) => {
