@@ -1,7 +1,7 @@
 # Countries REST
 
 ## Descrição
-    Esse é um projeto de REST countries API usando REACT, single-page application (SPA). (Projeto do frontendmentor.io https://www.frontendmentor.io). 
+   - Esse é um projeto de REST countries API usando REACT, single-page application (SPA). (Projeto do frontendmentor.io https://www.frontendmentor.io). 
 
 
 ## Funcionalidades
@@ -20,11 +20,11 @@
 
 ## Gifs
 
-### 
-<img src="" alt="gif ">
+###  Navegação e filtro continentes
+<img src="./src/images/navegação.gif" alt="gif ">
 
-### 
-<img src="" alt="gif">
+###  Filtro país e detalhes.
+<img src="./src/images/detalhes.gif" alt="gif">
 
 ## Como utilizar
 
