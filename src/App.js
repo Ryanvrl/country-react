@@ -11,8 +11,8 @@ function App() {
 
     return (
         <>
-            <GlobalStyle />
             <ThemeProvider>
+            <GlobalStyle />
                 <BrowserRouter>
                     <Header />
                     <AppRoutes />
@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
       }
 
       #root {
-        min-height: 100vh;
+        min-height: 100vh; 
       }
 `
 
