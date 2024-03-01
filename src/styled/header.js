@@ -10,7 +10,7 @@ const Header = () => {
         <HeaderStyled theme={theme}>
             <a href="/" className="title"> Where in the world? </a>
 
-            <button onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)} className="btn-change-theme">
+            <button onClick={() => setTheme(theme.name == 'Dark' ? themes.dark : themes.light)} className="btn-change-theme">
                 <FaMoon  className="icon-moon"/>
                 {theme.name} Mode
             </button>

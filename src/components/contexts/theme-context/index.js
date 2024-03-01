@@ -21,7 +21,11 @@ const themes = {
 const ThemeContext = createContext({})
 
 const getThemeFromLocalStore = () => {
+    if (JSON.parse(localStorage.getItem('theme')) == null) {
+        return themes.light
+    }
     const theme = JSON.parse(localStorage.getItem('theme'))
+
     return theme
 }
 
