@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
 const themes = {
     light: {
@@ -20,9 +20,19 @@ const themes = {
 
 const ThemeContext = createContext({})
 
-const ThemeProvider = (props) => {
-    const [theme, setTheme] = useState(themes.light)
+const getThemeFromLocalStore = () => {
+    const theme = JSON.parse(localStorage.getItem('theme'))
+    return theme
+}
 
+const saveThemeToLocalStore = (theme) => {
+    localStorage.setItem("theme", JSON.stringify(theme))
+}
+
+const ThemeProvider = (props) => {
+    const [theme, setTheme] = useState(getThemeFromLocalStore)
+
+    saveThemeToLocalStore(theme)
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>
             {props.children}
