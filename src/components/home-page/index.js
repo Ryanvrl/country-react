@@ -16,13 +16,14 @@ const HomePage = () => {
     useEffect(() => {
         async function fetchData() {
             const response = await getCountries()
+            console.log(response);
             setCountries(response)
         }
         fetchData()
     }, [])
 
     const getCountries = async () => {
-        const response = await axios.get(`http://localhost:3000/json/data.json`)
+        const response = await axios.get(`https://restcountries.com/v3.1/all`)
         return await response.data
     }
 
@@ -50,9 +51,9 @@ const HomePage = () => {
                 <ul className="list-countries">
                     {countries
                         .filter((country) => country.region.toLowerCase().includes(filter.toLowerCase()))
-                        .filter((country) => country.name.toLowerCase().includes(search.toLowerCase()))
+                        .filter((country) => country.name.common.toLowerCase().includes(search.toLowerCase()))
                         .map((country) =>
-                            <Link to={`country/${country.name}`} key={country.name} className="link">
+                            <Link to={`country/${country.name.common}`} key={country.name.common} className="link">
                                 <CardCountry countryData={country}/>
                             </Link>
                         )}

@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { CountryStyled } from "../../styled/cardCountryStyled"
 import { ThemeContext } from "../contexts/theme-context"
 
@@ -10,7 +10,7 @@ const CardCountry = ({ countryData }) => {
             <img src={countryData.flags.png} className="flag"/>
 
             <div className="infos-country">
-                <h3 className="name-country info">{countryData.name}</h3>
+                <h3 className="name-country info">{countryData.name.common}</h3>
                 <div className="population">
                     <span>Population: </span>
                     {countryData.population}
