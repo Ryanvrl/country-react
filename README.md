@@ -1,7 +1,7 @@
-# Countries REST
+# Countries API
 
 ## Descrição
-   - Esse é um projeto de REST countries API usando REACT, single-page application (SPA). (Projeto do frontendmentor.io https://www.frontendmentor.io). 
+   - Esse é um projeto de API countries usando REACT, single-page application (SPA). (Projeto do frontendmentor.io https://www.frontendmentor.io). 
 
 
 ## Funcionalidades
@@ -14,7 +14,7 @@
 
 - Styled Components: Estilizar os componentes sem um arquivo css.
 - React Router: Usada para facilitar a navegação dentro da aplicação.
-- countryAPI: Usada para buscar os pokemons.
+- countryAPI: Usada para buscar os países.
 - Axios: Foi usado para buscar os dados ao invés do Fetch.
 - Context API: Para a criação de uma função que alterna o tema do projeto.
 
